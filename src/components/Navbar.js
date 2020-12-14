@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import { BookContext } from "../contexts/BookContext";
+import { UserContext } from "../contexts/UserContext";
 
 export default function Navbar() {
-  const { books } = useContext(BookContext);
+  const { ninja } = useContext(UserContext);
   return (
     <div className="navbar">
-      <h1>Ninja Reading List</h1>
-      <p>Currently you have {books.length} books to get through...</p>
+      <h1>Ninjas List</h1>
+      <p>Currently {ninja.length} ninjas are active...</p>
     </div>
   );
 }

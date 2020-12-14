@@ -5,12 +5,12 @@ export const BookContext = createContext();
 
 export default function BookContextProvider(props) {
   const [books, dispatch] = useReducer(bookReducer, [], () => {
-    const localData = localStorage.getItem("books");
+    const localData = localStorage.getItem("BOOKS"); //BOOKS is key//
     return localData ? JSON.parse(localData) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem("books", JSON.stringify(books));
+    localStorage.setItem("BOOKS", JSON.stringify(books));
   }, [books]);
 
   const value = { books, dispatch };
